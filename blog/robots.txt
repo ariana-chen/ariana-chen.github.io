@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ariana-chen.github.io/blog/sitemap.xml

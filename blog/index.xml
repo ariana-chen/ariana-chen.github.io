@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ariana-chen on Congo</title>
+    <link>https://ariana-chen.github.io/blog/</link>
+    <description>Recent content in ariana-chen on Congo</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 21 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ariana-chen.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于我</title>
+      <link>https://ariana-chen.github.io/blog/about/</link>
+      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://ariana-chen.github.io/blog/about/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Helloworld</title>
+      <link>https://ariana-chen.github.io/blog/posts/helloworld/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ariana-chen.github.io/blog/posts/helloworld/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
