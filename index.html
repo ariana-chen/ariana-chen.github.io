@@ -16,14 +16,19 @@
     <title>Ariana的主页</title>
     <!-- HarmonyOS Sans -->
     <!-- 本站 CDN 已开启防盗链，非本站域名不可访问，请更改链接为下方内容，否则自定义字体将失效 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/harmonyos-sans@1.0.0/fonts/HarmonyOS_Sans_CN/regular.css" />
-    <style> 
-      *:not([class*="icon"]) {
-        font-family: "HarmonyOS Sans CN", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-        font-weight: 400 !important;
-        font-style: normal !important;
-      }
-    </style>
+    <!-- 超稳定无防盗链：鸿蒙字体HarmonyOS Sans 完整加载 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bytelang/harmonyos-sans-cdn@1.0.0/css/harmonyos-sans-cn-regular.css">
+<!-- 全局强制应用鸿蒙字体，排除图标避免乱码，保留系统兜底 -->
+<style>
+  *:not([class*="icon"]),
+  *:not([class*="icon"])::before,
+  *:not([class*="icon"])::after {
+    font-family: "HarmonyOS Sans CN", "HarmonyOS Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    letter-spacing: 0.5px; /* 可选：轻微增加字母间距，更贴合鸿蒙字体原生美感 */
+  }
+</style>
     <!-- <link rel="stylesheet" href="https://cdn.imsyy.top/gh/imsyy/file/font/HarmonyOS_Sans/regular.min.css" /> -->
     <!-- IE Out -->
     <script>
