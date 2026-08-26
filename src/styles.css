@@ -59,6 +59,16 @@ a:focus-visible,button:focus-visible{outline:2px solid #efb394;outline-offset:4p
 @media(max-width:700px){.note-grid{grid-template-columns:1fr}}
 .note-action{border-top:1px solid currentColor;padding:18px 0 0;width:100%;display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:.15em;opacity:.75;transition:opacity .28s ease,transform .28s ease}
 .note-card.linked{cursor:pointer}.note-card.linked:hover .note-action{opacity:1;transform:translateX(5px)}
+
+/* Notes imagery: keep the editorial color blocks, then reveal each subject on hover. */
+.note-card{position:relative;overflow:hidden;isolation:isolate}
+.note-card::before{content:"";position:absolute;inset:-8px;z-index:-1;background:center/cover no-repeat;opacity:.14;filter:grayscale(1) sepia(.28) blur(2px);transform:scale(1.045);transition:opacity .4s ease,filter .4s ease,transform .6s ease}
+.note-card.sand::before{background-image:linear-gradient(rgba(213,181,143,.35),rgba(213,181,143,.35)),url('/assets/note-math.webp')}
+.note-card.rose::before{background-image:linear-gradient(rgba(183,128,115,.38),rgba(183,128,115,.38)),url('/assets/note-physics.webp')}
+.note-card.cocoa::before{background-image:linear-gradient(rgba(75,51,42,.28),rgba(75,51,42,.28)),url('/assets/note-cs-ai.webp')}
+.note-card.clay::before{background-image:linear-gradient(rgba(140,98,84,.38),rgba(140,98,84,.38)),url('/assets/note-psychology.webp')}
+.note-card:hover::before{opacity:.52;filter:grayscale(.18) sepia(.18) blur(0);transform:scale(1)}
+@media(prefers-reduced-motion:reduce){.note-card::before{transition:none}}
 .strength-card{transition:transform .32s ease,background-color .32s ease,color .32s ease,border-color .32s ease}
 .strength-card:nth-child(1):hover{background:#a9664d;border-color:#a9664d;color:#fff}
 .strength-card:nth-child(2):hover{background:#4b332a;border-color:#4b332a;color:#fff}
