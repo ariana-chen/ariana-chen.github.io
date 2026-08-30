@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react'
 import { ArrowDownRight, ArrowUpRight, AtSign, BrainCircuit, Cat, Code2, Heart, MapPin, Music2, Smile, Sparkles, Waves } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa'
 
@@ -22,15 +23,42 @@ const funFacts = [
 ]
 
 function App() {
+  const audioRef = useRef(null)
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false)
+
+  const toggleMusic = async () => {
+    const audio = audioRef.current
+    if (!audio) return
+
+    if (isMusicPlaying) {
+      audio.pause()
+      setIsMusicPlaying(false)
+      return
+    }
+
+    try {
+      audio.volume = 0.22
+      await audio.play()
+      setIsMusicPlaying(true)
+    } catch {
+      setIsMusicPlaying(false)
+    }
+  }
+
   return (
     <main>
+      <audio ref={audioRef} src="/assets/site-soundtrack.ogg" loop preload="metadata" />
       <section className="hero" id="home">
         <img className="hero-media" src="/neuron-hero.webp" alt="Gold neuron microscopy image" fetchPriority="high" decoding="async" />
         <div className="hero-wash" />
         <nav className="nav shell">
           <a className="brand" href="#home">CZH <span>|</span> PKU</a>
           <div className="nav-links">
-            <a href="#about">ABOUT</a><a href="#notes">NOTES</a><a href="#strengths">STRENGTHS</a><a href="#contact">CONTACT</a>
+            <a href="#about">ABOUT</a><a href="#notes">NOTES</a><a href="#strengths">STRENGTHS</a>
+            <button className={`music-toggle${isMusicPlaying ? ' is-playing' : ''}`} type="button" onClick={toggleMusic} aria-pressed={isMusicPlaying} aria-label={isMusicPlaying ? 'Pause background music' : 'Play background music'}>
+              MUSIC <span className="music-status" aria-hidden="true" />
+            </button>
+            <a href="#contact">CONTACT</a>
           </div>
           <a className="nav-contact" href="mailto:2500012848@stu.pku.edu.cn">LET'S TALK <ArrowUpRight size={16} /></a>
         </nav>

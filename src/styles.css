@@ -69,6 +69,16 @@ a:focus-visible,button:focus-visible{outline:2px solid #efb394;outline-offset:4p
 .note-card.clay::before{background-image:linear-gradient(rgba(140,98,84,.38),rgba(140,98,84,.38)),url('/assets/note-psychology.webp')}
 .note-card:hover::before{opacity:.52;filter:grayscale(.18) sepia(.18) blur(0);transform:scale(1)}
 @media(prefers-reduced-motion:reduce){.note-card::before{transition:none}}
+
+.music-toggle{appearance:none;border:0;padding:0;background:transparent;color:inherit;font:inherit;letter-spacing:inherit;cursor:pointer;opacity:.78;display:inline-flex;align-items:center;gap:8px;position:relative;transition:color .28s ease,opacity .28s ease}
+.music-toggle::after{content:"";position:absolute;left:0;right:100%;bottom:-8px;height:1px;background:#e8b498;transition:right .28s ease}
+.music-toggle:hover,.music-toggle:focus-visible,.music-toggle.is-playing{color:#efbda2;opacity:1}
+.music-toggle:hover::after,.music-toggle:focus-visible::after,.music-toggle.is-playing::after{right:0}
+.music-toggle:focus-visible{outline:1px solid #efbda2;outline-offset:8px;border-radius:2px}
+.music-status{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.4);transition:background-color .28s ease,box-shadow .28s ease}
+.music-toggle.is-playing .music-status{background:#efbda2;box-shadow:0 0 0 4px rgba(239,189,162,.14);animation:music-pulse 1.8s ease-in-out infinite}
+@keyframes music-pulse{50%{transform:scale(1.45);box-shadow:0 0 0 7px rgba(239,189,162,0)}}
+@media(prefers-reduced-motion:reduce){.music-toggle,.music-toggle::after,.music-status{transition:none}.music-toggle.is-playing .music-status{animation:none}}
 .strength-card{transition:transform .32s ease,background-color .32s ease,color .32s ease,border-color .32s ease}
 .strength-card:nth-child(1):hover{background:#a9664d;border-color:#a9664d;color:#fff}
 .strength-card:nth-child(2):hover{background:#4b332a;border-color:#4b332a;color:#fff}
