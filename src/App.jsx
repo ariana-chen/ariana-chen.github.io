@@ -163,7 +163,7 @@ function App() {
           <a className="nav-contact" href="mailto:2500012848@stu.pku.edu.cn">LET'S TALK <ArrowUpRight size={16} /></a>
         </nav>
         <div className="hero-content shell">
-          <p className="eyebrow light"><Sparkles size={14} /> STUDENT · EXPLORER · BUILDER</p>
+          <p className="eyebrow light"><Sparkles size={14} /> CHEN ZHUHUAN'S HOMEPAGE · PKU</p>
           <h1>Curious about<br /><em>minds</em> & machines.</h1>
           <div className="hero-bottom">
             <p>Decoding stable representations<br />from complex, ever-changing neural signals.</p>
