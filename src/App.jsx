@@ -108,8 +108,8 @@ function BlogArchive() {
 function App() {
   const audioRef = useRef(null)
   const [isMusicPlaying, setIsMusicPlaying] = useState(false)
-  const [activePost, setActivePost] = useState(() => window.location.hash.startsWith('#/blog/') ? window.location.hash.replace('#/blog/', '') : null)
-  const [isArchive, setIsArchive] = useState(() => window.location.hash === '#/blog')
+  const [activePost, setActivePost] = useState(() => typeof window !== 'undefined' && window.location.hash.startsWith('#/blog/') ? window.location.hash.replace('#/blog/', '') : null)
+  const [isArchive, setIsArchive] = useState(() => typeof window !== 'undefined' && window.location.hash === '#/blog')
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -163,7 +163,7 @@ function App() {
           <a className="nav-contact" href="mailto:2500012848@stu.pku.edu.cn">LET'S TALK <ArrowUpRight size={16} /></a>
         </nav>
         <div className="hero-content shell">
-          <p className="eyebrow light"><Sparkles size={14} /> CHEN ZHUHUAN'S HOMEPAGE · PKU</p>
+          <p className="eyebrow light"><Sparkles size={14} /> ZHUHUAN CHEN'S HOMEPAGE · PKU</p>
           <h1>Curious about<br /><em>minds</em> & machines.</h1>
           <div className="hero-bottom">
             <p>Decoding stable representations<br />from complex, ever-changing neural signals.</p>
@@ -181,7 +181,7 @@ function App() {
           </div>
           <div className="about-copy">
             <p className="kicker">HELLO, I'M</p>
-            <h2>陈主寰<br /><i>Chen Zhuhuan</i></h2>
+            <h2>陈主寰<br /><i>Zhuhuan Chen</i></h2>
             <p className="lead">An undergraduate in Intelligent Science and Technology at Peking University, curious about NeuroAI, brain-computer interfaces, and emotion decoding.</p>
             <p className="body-copy">I care about how neuroscience can help us understand intelligence—and how these technologies might ultimately support mental health. My current work spans neural data analysis, machine learning, and brain-inspired computation.</p>
             <div className="contact-row">
@@ -259,7 +259,7 @@ function App() {
           <p className="eyebrow light"><Sparkles size={14} /> OPEN TO IDEAS & COLLABORATION</p>
           <h2>Let's explore<br />what the mind<br /><em>can become.</em></h2>
           <a className="mail-button" href="mailto:2500012848@stu.pku.edu.cn">GET IN TOUCH <ArrowUpRight /></a>
-          <div className="footer-bottom"><span>CHEN ZHUHUAN © 2026</span><span>BEIJING · CHINA</span><a href="#home">BACK TO TOP ↑</a></div>
+          <div className="footer-bottom"><span>ZHUHUAN CHEN © 2026</span><span>BEIJING · CHINA</span><a href="#home">BACK TO TOP ↑</a></div>
         </div>
       </footer>
     </main>
